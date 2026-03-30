@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kritika 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  background: linear-gradient(-45deg, #ffd6e0, #e0c3fc, #fff, #ffe7c7);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: #333;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-family: 'Dancing Script', cursive;
+  animation: fadeIn 2s ease;
+}
+
+.typewriter {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  max-width: 400px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* BUTTON */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #ff9ecf;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff9ecf;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  width: 200px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  color: pink;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-100vh);}
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  font-size: 1rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Happy Birthday Kritika 🎉</h1>
+  <div class="typewriter" id="typewriter"></div>
+</section>
+
+<!-- SPECIAL MESSAGE -->
+<section>
+  <h2>💖 Special Message</h2>
+  <p>
+    Kritika, you are an amazing friend and one of the most genuine people I know.  
+    I'm really lucky to have you in my life.  
+    May your day be filled with happiness, laughter, and lots of fun 🎉😊
+  </p>
+</section>
+
+<!-- REASONS -->
+<section>
+  <h2>Why You're Amazing ✨</h2>
+  <div class="cards">
+    <div class="card">Your smile 😊</div>
+    <div class="card">Your kindness 💕</div>
+    <div class="card">Your sense of humor 😄</div>
+    <div class="card">Your uniqueness 🌸</div>
+  </div>
+</section>
+
+<!-- SURPRISE -->
+<section>
+  <button onclick="showPopup()">Click for Surprise 🎁</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Made with ❤️ just for you, Kritika
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <p>You deserve all the happiness in the world 💖 Never forget how special you are!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+// TYPEWRITER
+const text = "Today is all about you, your smile, your happiness, and the amazing person you are 💖";
+let i = 0;
+
+function typing() {
+  if (i < text.length) {
+    document.getElementById("typewriter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 50);
+  }
+}
+typing();
+
+// POPUP
+function showPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+// FLOATING HEARTS
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💕";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 10 + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 5000);
+}, 300);
+
+// CONFETTI ALERT
+window.onload = () => {
+  alert("🎉 Happy Birthday Kritika 🎂");
+};
+</script>
+
+</body>
+</html>
